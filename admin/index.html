@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - IMA National Health Scheme</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/premium.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="custom-cursor"></div>
+<div class="custom-cursor-follower"></div>
+
+<section class="user">
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">Don't have an account?</h2>
+        <p class="user_unregistered-text">Register now to access member benefits, track your claims, and manage your profile securely.</p>
+        <button class="user_unregistered-signup cursor-hover" id="signup-button" data-text="CLICK">Sign up</button>
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">Have an account?</h2>
+        <p class="user_registered-text">Welcome back! Login to your dashboard to access your member services and stay updated.</p>
+        <button class="user_registered-login cursor-hover" id="login-button" data-text="CLICK">Login</button>
+      </div>
+    </div>
+    
+    <div class="user_options-forms" id="user_options-forms">
+      <div class="user_forms-login">
+        <h2 class="forms_title">Login</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="text" placeholder="Username" class="forms_field-input" required autofocus />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="Password" class="forms_field-input" required />
+            </div>
+            <div class="forms_field text-right" style="text-align: right; margin-top: 10px;">
+              <button type="button" class="forms_buttons-forgot cursor-hover" data-text="CLICK">Forgot Password?</button>
+            </div>
+            
+            <div class="captcha_container" style="margin-top: 25px;">
+              <label class="captcha_label" style="display: block; font-weight: 600; margin-bottom: 10px; color: #1e293b;">Enter CAPTCHA</label>
+              <div class="captcha_box_wrapper" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                <div class="captcha_box" style="flex: 1; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; font-family: monospace; font-size: 1.2rem; font-weight: bold; letter-spacing: 3px; padding: 10px;">HL0e3S</div>
+                <button type="button" class="captcha_refresh cursor-hover" data-text="REFRESH" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0 15px; color: #64748b; transition: all 0.2s ease;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                </button>
+              </div>
+              <div class="forms_field">
+                <input type="text" placeholder="Type the text above" class="forms_field-input" required />
+              </div>
+            </div>
+          </fieldset>
+          <div class="forms_buttons" style="margin-top: 25px;">
+            <input type="submit" value="Login" class="forms_buttons-action cursor-hover" data-text="CLICK" style="width: 100%; padding: 14px; text-align: center;">
+          </div>
+        </form>
+      </div>
+      <div class="user_forms-signup">
+        <h2 class="forms_title">Sign Up</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="text" placeholder="Full Name" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="email" placeholder="Email Address" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="Password" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <select class="forms_field-input forms_field-select" required style="color: #64748b; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill=%22%2364748b%22 height=%2224%22 viewBox=%220 0 24 24%22 width=%2224%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/><path d=%22M0 0h24v24H0z%22 fill=%22none%22/></svg>'); background-repeat: no-repeat; background-position-x: 96%; background-position-y: 50%;">
+                <option value="" disabled selected>Select State</option>
+                <option value="kerala">Kerala</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="tamil_nadu">Tamil Nadu</option>
+                <option value="maharashtra">Maharashtra</option>
+              </select>
+            </div>
+
+            <div class="captcha_container" style="margin-top: 25px;">
+              <label class="captcha_label" style="display: block; font-weight: 600; margin-bottom: 10px; color: #1e293b;">Enter CAPTCHA</label>
+              <div class="captcha_box_wrapper" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                <div class="captcha_box" style="flex: 1; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; font-family: monospace; font-size: 1.2rem; font-weight: bold; letter-spacing: 3px; padding: 10px;">3q2z0J</div>
+                <button type="button" class="captcha_refresh cursor-hover" data-text="REFRESH" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0 15px; color: #64748b; transition: all 0.2s ease;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                </button>
+              </div>
+              <div class="forms_field">
+                <input type="text" placeholder="Type the text above" class="forms_field-input" required />
+              </div>
+            </div>
+          </fieldset>
+          <div class="forms_buttons" style="margin-top: 25px;">
+            <input type="submit" value="Create Account" class="forms_buttons-action cursor-hover" data-text="CLICK" style="width: 100%; padding: 14px; text-align: center; background-color: #198754;">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/**
+ * Variables
+ */
+const signupButton = document.getElementById('signup-button'),
+    loginButton = document.getElementById('login-button'),
+    userForms = document.getElementById('user_options-forms')
+
+/**
+ * Add event listener to the "Sign Up" button
+ */
+signupButton.addEventListener('click', () => {
+  userForms.classList.remove('bounceRight')
+  userForms.classList.add('bounceLeft')
+}, false)
+
+/**
+ * Add event listener to the "Login" button
+ */
+loginButton.addEventListener('click', () => {
+  userForms.classList.remove('bounceLeft')
+  userForms.classList.add('bounceRight')
+}, false)
+/**
+ * Custom Cursor
+ */
+const cursor = document.querySelector('.custom-cursor');
+const follower = document.querySelector('.custom-cursor-follower');
+const hoverElements = document.querySelectorAll('.cursor-hover');
+
+if (window.matchMedia("(min-width: 769px)").matches) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        // Smoother follower
+        setTimeout(() => {
+            follower.style.left = e.clientX + 'px';
+            follower.style.top = e.clientY + 'px';
+        }, 50);
+    });
+
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+            follower.classList.add('hover');
+            const text = el.getAttribute('data-text') || '';
+            cursor.setAttribute('data-text', text);
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+            follower.classList.remove('hover');
+            cursor.removeAttribute('data-text');
+        });
+    });
+}
+</script>
+</body>
+</html>
