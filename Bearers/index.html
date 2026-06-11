@@ -11,112 +11,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <!-- Premium CSS -->
     <link rel="stylesheet" href="../css/premium.css">
-
-    <style>
-        body {
-            background-color: #f8fafc;
-        }
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 120px 0 60px;
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
-        }
-
-        /* Hierarchy Chart Styles */
-        .hierarchy-tree {
-            display: flex;
-            justify-content: center;
-            overflow-x: auto;
-            padding-bottom: 50px;
-        }
-
-        .tree ul {
-            padding-top: 20px; position: relative;
-            transition: all 0.5s;
-            display: flex;
-            justify-content: center;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .tree li {
-            float: left; text-align: center;
-            list-style-type: none;
-            position: relative;
-            padding: 20px 20px 0 20px;
-            transition: all 0.5s;
-        }
-
-        /* Lines */
-        .tree li::before, .tree li::after{
-            content: '';
-            position: absolute; top: 0; right: 50%;
-            border-top: 2px solid rgba(0, 87, 216, 0.3);
-            width: 50%; height: 20px;
-        }
-        .tree li::after{
-            right: auto; left: 50%;
-            border-left: 2px solid rgba(0, 87, 216, 0.3);
-        }
-
-        /* Remove left-right connectors from elements without any siblings */
-        .tree li:only-child::after, .tree li:only-child::before {
-            display: none;
-        }
-
-        /* Remove space from the top of single children */
-        .tree li:only-child{ padding-top: 0;}
-
-        /* Remove left connector from first child and right connector from last child */
-        .tree li:first-child::before, .tree li:last-child::after{
-            border: 0 none;
-        }
-        /* Adding back the vertical connector to the last nodes */
-        .tree li:last-child::before{
-            border-right: 2px solid rgba(0, 87, 216, 0.3);
-            border-radius: 0 5px 0 0;
-        }
-        .tree li:first-child::after{
-            border-radius: 5px 0 0 0;
-        }
-
-        /* Downward connectors from parents */
-        .tree ul ul::before{
-            content: '';
-            position: absolute; top: 0; left: 50%;
-            border-left: 2px solid rgba(0, 87, 216, 0.3);
-            width: 0; height: 20px;
-            transform: translateX(-1px);
-        }
-
-        /* Card custom width for tree */
-        .tree .team-card-premium {
-            width: 260px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-
-        @media (max-width: 990px) {
-            .tree ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            .tree li {
-                padding: 15px 0;
-            }
-            .tree li::before, .tree li::after, .tree ul ul::before {
-                display: none; /* Hide connecting lines on mobile */
-            }
-            .tree .team-card-premium {
-                width: 300px;
-                max-width: 100%;
-            }
-        }
-    </style>
+    <!-- Card Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -155,84 +51,199 @@
 <div class="page-header">
     <div class="container">
         <h1 class="display-4 fw-bold mb-3">Office Bearers</h1>
-        <p class="lead mb-0 text-white-50">Leadership and Hierarchy of IMA National Health Scheme</p>
+        <p class="lead mb-0 text-white-50">Leadership Profiles of IMA National Health Scheme</p>
     </div>
 </div>
 
 <div class="container container-max mb-5">
-    <div class="hierarchy-tree">
-        <div class="tree">
-            <ul>
-                <!-- LEVEL 1: National President -->
-                <li>
-                    <div class="team-card-premium cursor-hover" data-text="VIEW">
-                        <div class="team-img-wrapper">
-                            <img src="https://leoninedigital.com/assets/images/members/m1.jpeg" alt="Dr.R.V.Asokan">
-                        </div>
-                        <h6 class="fw-bold text-dark mb-1">Dr.R.V.Asokan</h6>
-                        <p class="small-text text-muted mb-0">National President, IMA</p>
+    <div class="profile-grid">
+        
+        <!-- Member 1 -->
+        <div class="profile-card cursor-hover" data-text="VIEW">
+            <div class="profile-img">
+                <img src="https://leoninedigital.com/assets/images/members/m1.jpeg" alt="Dr. R.V. Asokan">
+            </div>
+            <div class="profile-name">
+                <h4>Dr. R.V. Asokan</h4>
+                <p>National President, IMA</p>
+            </div>
+            <div class="profile-rest">
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <h5>15+</h5>
+                        <p>Years exp</p>
                     </div>
-                    
-                    <ul>
-                        <!-- LEVEL 2: Sec Gen & Finance Sec -->
-                        <li>
-                            <div class="team-card-premium cursor-hover" data-text="VIEW">
-                                <div class="team-img-wrapper">
-                                    <img src="https://leoninedigital.com/assets/images/members/m2.jpeg" alt="Dr. Anil Kumar J. Nayak">
-                                </div>
-                                <h6 class="fw-bold text-dark mb-1">Dr. Anil Kumar J. Nayak</h6>
-                                <p class="small-text text-muted mb-0">Hon.Secretary General, IMA</p>
-                            </div>
-
-                            <ul>
-                                <!-- LEVEL 3: Chairman -->
-                                <li>
-                                    <div class="team-card-premium cursor-hover" data-text="VIEW">
-                                        <div class="team-img-wrapper">
-                                            <img src="https://leoninedigital.com/assets/images/members/m4.jpg" alt="Dr.Jayesh Lele">
-                                        </div>
-                                        <h6 class="fw-bold text-dark mb-1">Dr.Jayesh Lele</h6>
-                                        <p class="small-text text-muted mb-0">Chairman, IMA Health Scheme</p>
-                                    </div>
-                                    
-                                    <ul>
-                                        <!-- LEVEL 4: Vice Chairman & Secretary -->
-                                        <li>
-                                            <div class="team-card-premium cursor-hover" data-text="VIEW">
-                                                <div class="team-img-wrapper">
-                                                    <img src="https://leoninedigital.com/assets/images/members/m5.jpg" alt="Dr.Krishnan Jayaram Das">
-                                                </div>
-                                                <h6 class="fw-bold text-dark mb-1">Dr.Krishnan Jayaram Das</h6>
-                                                <p class="small-text text-muted mb-0">Vice Chairman, IMA Health Scheme</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="team-card-premium cursor-hover" data-text="VIEW">
-                                                <div class="team-img-wrapper">
-                                                    <img src="https://leoninedigital.com/assets/images/members/m6.jpg" alt="Dr.P. Gopikumar">
-                                                </div>
-                                                <h6 class="fw-bold text-dark mb-1">Dr.P. Gopikumar</h6>
-                                                <p class="small-text text-muted mb-0">Hony. Secretary, IMA Health Scheme</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                        <li>
-                            <div class="team-card-premium cursor-hover" data-text="VIEW">
-                                <div class="team-img-wrapper">
-                                    <img src="https://leoninedigital.com/assets/images/members/m3.jpg" alt="Dr. Shitij Bali">
-                                </div>
-                                <h6 class="fw-bold text-dark mb-1">Dr. Shitij Bali</h6>
-                                <p class="small-text text-muted mb-0">Hony. Finance Secretary, IMA</p>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                    <div class="stat-box">
+                        <h5>HQ</h5>
+                        <p>Location</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>A+</h5>
+                        <p>Rating</p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-follow cursor-hover" data-text="MAIL">Contact</button>
+                    <button class="btn btn-message cursor-hover" data-text="VIEW">Profile</button>
+                </div>
+            </div>
         </div>
+
+        <!-- Member 2 -->
+        <div class="profile-card cursor-hover" data-text="VIEW">
+            <div class="profile-img">
+                <img src="https://leoninedigital.com/assets/images/members/m2.jpeg" alt="Dr. Anil Kumar J. Nayak">
+            </div>
+            <div class="profile-name">
+                <h4>Dr. Anil Kumar J. Nayak</h4>
+                <p>Hon. Secretary General, IMA</p>
+            </div>
+            <div class="profile-rest">
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <h5>12+</h5>
+                        <p>Years exp</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>HQ</h5>
+                        <p>Location</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>A+</h5>
+                        <p>Rating</p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-follow cursor-hover" data-text="MAIL">Contact</button>
+                    <button class="btn btn-message cursor-hover" data-text="VIEW">Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="profile-card cursor-hover" data-text="VIEW">
+            <div class="profile-img">
+                <img src="https://leoninedigital.com/assets/images/members/m3.jpg" alt="Dr. Shitij Bali">
+            </div>
+            <div class="profile-name">
+                <h4>Dr. Shitij Bali</h4>
+                <p>Hony. Finance Secretary, IMA</p>
+            </div>
+            <div class="profile-rest">
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <h5>10+</h5>
+                        <p>Years exp</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>HQ</h5>
+                        <p>Location</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>A+</h5>
+                        <p>Rating</p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-follow cursor-hover" data-text="MAIL">Contact</button>
+                    <button class="btn btn-message cursor-hover" data-text="VIEW">Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="profile-card cursor-hover" data-text="VIEW">
+            <div class="profile-img">
+                <img src="https://leoninedigital.com/assets/images/members/m4.jpg" alt="Dr. Jayesh Lele">
+            </div>
+            <div class="profile-name">
+                <h4>Dr. Jayesh Lele</h4>
+                <p>Chairman, IMA Health Scheme</p>
+            </div>
+            <div class="profile-rest">
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <h5>20+</h5>
+                        <p>Years exp</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>HQ</h5>
+                        <p>Location</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>A+</h5>
+                        <p>Rating</p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-follow cursor-hover" data-text="MAIL">Contact</button>
+                    <button class="btn btn-message cursor-hover" data-text="VIEW">Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member 5 -->
+        <div class="profile-card cursor-hover" data-text="VIEW">
+            <div class="profile-img">
+                <img src="https://leoninedigital.com/assets/images/members/m5.jpg" alt="Dr. Krishnan Jayaram Das">
+            </div>
+            <div class="profile-name">
+                <h4>Dr. Krishnan Jayaram Das</h4>
+                <p>Vice Chairman, IMA Health Scheme</p>
+            </div>
+            <div class="profile-rest">
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <h5>18+</h5>
+                        <p>Years exp</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>HQ</h5>
+                        <p>Location</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>A+</h5>
+                        <p>Rating</p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-follow cursor-hover" data-text="MAIL">Contact</button>
+                    <button class="btn btn-message cursor-hover" data-text="VIEW">Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member 6 -->
+        <div class="profile-card cursor-hover" data-text="VIEW">
+            <div class="profile-img">
+                <img src="https://leoninedigital.com/assets/images/members/m6.jpg" alt="Dr. P. Gopikumar">
+            </div>
+            <div class="profile-name">
+                <h4>Dr. P. Gopikumar</h4>
+                <p>Hony. Secretary, IMA Health Scheme</p>
+            </div>
+            <div class="profile-rest">
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <h5>15+</h5>
+                        <p>Years exp</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>HQ</h5>
+                        <p>Location</p>
+                    </div>
+                    <div class="stat-box">
+                        <h5>A+</h5>
+                        <p>Rating</p>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-follow cursor-hover" data-text="MAIL">Contact</button>
+                    <button class="btn btn-message cursor-hover" data-text="VIEW">Profile</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

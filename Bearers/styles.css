@@ -1,0 +1,170 @@
+/* Profile Card Styles */
+body {
+    background-color: #f8fafc;
+}
+.page-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 120px 0 60px;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    row-gap: 150px; /* Space for the top overlapping images */
+    padding: 120px 20px 100px;
+}
+
+.profile-card {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: 230px; /* Initial height for image + name */
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    margin: 0 auto;
+}
+
+.profile-card:hover {
+    height: 420px; /* Expand to show all details */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.profile-img {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 2;
+    background: #fff;
+}
+
+.profile-card:hover .profile-img {
+    top: -140px; /* Move up on hover */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.profile-name {
+    position: absolute;
+    top: 160px;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 0 15px;
+}
+
+.profile-card:hover .profile-name {
+    top: 120px; /* Move up together with the image */
+}
+
+.profile-name h4 {
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.profile-name p {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.profile-rest {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    padding: 0 30px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.profile-card:hover .profile-rest {
+    opacity: 1;
+    visibility: visible;
+    top: 200px; /* Fade in and slide up */
+    transition-delay: 0.1s;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box h5 {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.stat-box p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.profile-actions .btn {
+    flex: 1;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px 0;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.btn-follow {
+    background: #ff477e;
+    color: #fff;
+    border: none;
+}
+
+.btn-follow:hover {
+    background: #e03566;
+    color: #fff;
+}
+
+.btn-message {
+    background: #94a3b8;
+    color: #fff;
+    border: none;
+}
+
+.btn-message:hover {
+    background: #64748b;
+    color: #fff;
+}
