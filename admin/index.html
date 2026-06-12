@@ -12,6 +12,11 @@
     <meta name="robots" content="index, follow">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="../css/premium.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,9 +26,148 @@
 <div class="custom-cursor"></div>
 <div class="custom-cursor-follower"></div>
 
-<section class="user">
-  <div class="user_options-container">
-    <div class="user_options-text">
+<!-- Top Bar -->
+<div class="top-bar-modern d-none d-lg-block">
+    <div class="container container-max d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="d-flex gap-4">
+            <span><i class="fa fa-envelope me-2"></i> imanhs2016@gmail.com</span>
+            <span><i class="fa fa-phone me-2"></i> +91 94000 71133</span>
+        </div>
+        <div class="social-icons d-flex gap-3">
+            <a href="#" class="cursor-hover" data-text="OPEN"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="cursor-hover" data-text="OPEN"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="cursor-hover" data-text="OPEN"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="navbar-modern scrolled" id="mainHeader">
+    <div class="container container-max">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <a class="navbar-brand d-flex align-items-center gap-3 cursor-hover" data-text="HOME" href="../index.html">
+                <img src="../assets/imgi_1_top_logo_1.webp" height="55" alt="IMA Logo" style="transition: transform 0.3s">
+                <img src="../assets/imgi_2_top_logo_2.webp" height="55" alt="IMA Health Scheme" style="transition: transform 0.3s">
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../index.html#whyus">Why Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../index.html#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../index.html#office-bearers">Office Bearers</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../index.html#downloads">Downloads</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../assets/bye%20law%202%20PDf.pdf" target="_blank">Bye Laws</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../index.html#news-and-events">News & Updates</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../index.html#contact">Contact Us</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-premium active cursor-hover" data-text="LOGIN" href="#">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<style>
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto 0;
+  }
+  .login-header {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .login-header-logos {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .login-header-logos img {
+    height: 65px;
+    transition: transform 0.3s;
+  }
+  .login-header-logos a:hover img {
+    transform: scale(1.05);
+  }
+  .login-header-title {
+    color: #002d5c;
+    font-weight: 800;
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.3 !important;
+  }
+  .login-header-text {
+    color: #64748b;
+    font-size: 1rem;
+    max-width: 600px;
+    line-height: 1.5 !important;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Desktop layout gap fix */
+  @media screen and (min-width: 769px) {
+    .user_options-container {
+      margin-top: 30px !important;
+      min-height: 750px;
+    }
+    .user_options-text {
+      min-height: 750px;
+      align-items: stretch;
+    }
+    .user_options-registered, .user_options-unregistered {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  /* Mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .login-header-title {
+      font-size: 1.8rem;
+    }
+    .login-header-logos img {
+      height: 55px;
+    }
+    .user_options-container {
+      margin-top: 20px !important;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .login-header-title {
+      font-size: 1.6rem;
+    }
+    .login-header-logos img {
+      height: 45px;
+    }
+  }
+</style>
+
+<section class="user" style="height: auto; min-height: 100vh; padding: 20px 0; display: flex; flex-direction: column; justify-content: center;">
+  <div class="login-wrapper">
+    <div class="login-header">
+      <h1 class="login-header-title">IMA National Health Scheme</h1>
+      <p class="login-header-text">Secure login and registration portal to access member benefits, track your claims, and manage your profile.</p>
+    </div>
+    <div class="user_options-container">
+      <div class="user_options-text">
       <div class="user_options-unregistered">
         <h2 class="user_unregistered-title">Don't have an account?</h2>
         <p class="user_unregistered-text">Register now to access member benefits, track your claims, and manage your profile securely.</p>
@@ -39,7 +183,7 @@
     
     <div class="user_options-forms" id="user_options-forms">
       <div class="user_forms-login">
-        <h2 class="forms_title">Login</h2>
+        <h1 class="forms_title">Login</h1>
         <form class="forms_form">
           <fieldset class="forms_fieldset">
             <div class="forms_field">
@@ -66,12 +210,12 @@
             </div>
           </fieldset>
           <div class="forms_buttons" style="margin-top: 25px;">
-            <input type="submit" value="Login" class="forms_buttons-action cursor-hover" data-text="CLICK" style="width: 100%; padding: 14px; text-align: center;">
+            <input type="submit" value="Login" class="forms_buttons-action cursor-hover" data-text="CLICK" style="width: 100%; text-align: center;">
           </div>
         </form>
       </div>
       <div class="user_forms-signup">
-        <h2 class="forms_title">Sign Up</h2>
+        <h1 class="forms_title">Sign Up</h1>
         <form class="forms_form">
           <fieldset class="forms_fieldset">
             <div class="forms_field">
@@ -86,10 +230,42 @@
             <div class="forms_field">
               <select class="forms_field-input forms_field-select" required style="color: #64748b; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill=%22%2364748b%22 height=%2224%22 viewBox=%220 0 24 24%22 width=%2224%22 xmlns=%22http://www.w3.org/2000/svg%22><path d=%22M7 10l5 5 5-5z%22/><path d=%22M0 0h24v24H0z%22 fill=%22none%22/></svg>'); background-repeat: no-repeat; background-position-x: 96%; background-position-y: 50%;">
                 <option value="" disabled selected>Select State</option>
-                <option value="kerala">Kerala</option>
+                <option value="andaman_nicobar">Andaman and Nicobar Islands</option>
+                <option value="andhra_pradesh">Andhra Pradesh</option>
+                <option value="arunachal_pradesh">Arunachal Pradesh</option>
+                <option value="assam">Assam</option>
+                <option value="bihar">Bihar</option>
+                <option value="chandigarh">Chandigarh</option>
+                <option value="chhattisgarh">Chhattisgarh</option>
+                <option value="dadra_nagar_daman_diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                <option value="delhi">Delhi</option>
+                <option value="goa">Goa</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="haryana">Haryana</option>
+                <option value="himachal_pradesh">Himachal Pradesh</option>
+                <option value="jammu_kashmir">Jammu and Kashmir</option>
+                <option value="jharkhand">Jharkhand</option>
                 <option value="karnataka">Karnataka</option>
-                <option value="tamil_nadu">Tamil Nadu</option>
+                <option value="kerala">Kerala</option>
+                <option value="ladakh">Ladakh</option>
+                <option value="lakshadweep">Lakshadweep</option>
+                <option value="madhya_pradesh">Madhya Pradesh</option>
                 <option value="maharashtra">Maharashtra</option>
+                <option value="manipur">Manipur</option>
+                <option value="meghalaya">Meghalaya</option>
+                <option value="mizoram">Mizoram</option>
+                <option value="nagaland">Nagaland</option>
+                <option value="odisha">Odisha</option>
+                <option value="puducherry">Puducherry</option>
+                <option value="punjab">Punjab</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="sikkim">Sikkim</option>
+                <option value="tamil_nadu">Tamil Nadu</option>
+                <option value="telangana">Telangana</option>
+                <option value="tripura">Tripura</option>
+                <option value="uttar_pradesh">Uttar Pradesh</option>
+                <option value="uttarakhand">Uttarakhand</option>
+                <option value="west_bengal">West Bengal</option>
               </select>
             </div>
 
@@ -107,13 +283,58 @@
             </div>
           </fieldset>
           <div class="forms_buttons" style="margin-top: 25px;">
-            <input type="submit" value="Create Account" class="forms_buttons-action cursor-hover" data-text="CLICK" style="width: 100%; padding: 14px; text-align: center; background-color: #198754;">
+            <input type="submit" value="Create Account" class="forms_buttons-action cursor-hover" data-text="CLICK" style="width: 100%; text-align: center;">
           </div>
         </form>
       </div>
     </div>
+    </div>
   </div>
 </section>
+
+<footer class="footer-premium">
+    <div class="footer-mesh"></div>
+    <div class="container container-max footer-content">
+        <div class="row g-5">
+            <div class="col-lg-4 reveal active" style="transition-delay: 100ms">
+                <h4 class="mb-4 fw-bold">Contact Information</h4>
+                <div class="d-flex flex-column gap-3 text-white-50">
+                    <p class="mb-0 lh-lg text-light">Dr. P.Gopikumar<br/>Hon. Secretary, IMA National Health Scheme<br/><strong class="text-white">Smruthi</strong>, Olarikkara,<br/>P.O.Pullazhi, Thrissur-680012, Kerala State.<br/>Trivandrum, Kerala, India</p>
+                    <p class="mb-0 text-light"><i class="fa fa-envelope me-3 text-white"></i> imanhs2016@gmail.com</p>
+                    <p class="mb-0 text-light"><i class="fa fa-phone me-3 text-white"></i> +91 94000 71133</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 reveal active" style="transition-delay: 200ms">
+                <h4 class="mb-4 fw-bold">Useful Links</h4>
+                <ul class="list-unstyled footer-links-grid">
+                    <li><a href="../index.html#home" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Home</a></li>
+                    <li><a href="../index.html#whyus" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Why Us</a></li>
+                    <li><a href="../index.html#about" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> About Us</a></li>
+                    <li><a href="../index.html#office-bearers" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Office Bearers</a></li>
+                    <li><a href="../index.html#downloads" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Downloads</a></li>
+                    <li><a href="../assets/bye%20law%202%20PDf.pdf" target="_blank" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Bye Laws</a></li>
+                    <li><a href="../index.html#news-and-events" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> News & Updates</a></li>
+                    <li><a href="../index.html#contact" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-4 reveal active" style="transition-delay: 300ms">
+                <h4 class="mb-4 fw-bold">Follow Us</h4>
+                <div class="d-flex gap-3">
+                    <a href="#" class="social-icon-premium cursor-hover" data-text="OPEN"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon-premium cursor-hover" data-text="OPEN"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon-premium cursor-hover" data-text="OPEN"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon-premium cursor-hover" data-text="OPEN"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-premium text-center mt-5">
+            <p class="mb-0 text-white-50">© 2024 IMA Health Insurance Management. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 
 <script>
 /**

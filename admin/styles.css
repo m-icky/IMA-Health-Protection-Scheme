@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-body {
+.user {
   font-family: "Inter", sans-serif;
   font-size: 12px;
   line-height: 1em;
@@ -130,19 +130,62 @@ input::placeholder {
 .user_registered-login,
 .user_unregistered-signup {
   margin-top: 30px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 10px 30px;
+  border-radius: 14px;
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
   color: #fff;
   text-transform: uppercase;
-  line-height: 1em;
-  letter-spacing: 0.2rem;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  letter-spacing: 0.1rem;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
-.user_registered-login:hover,
+
+/* Login Toggle Button - Brighter Blue to Purple to contrast dark background */
+.user_registered-login {
+  background: linear-gradient(135deg, #0057D8, #712cf9);
+  box-shadow: 0 4px 15px rgba(0, 87, 216, 0.3);
+}
+.user_registered-login::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #712cf9, #0057D8);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.user_registered-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 87, 216, 0.4);
+}
+.user_registered-login:hover::before {
+  opacity: 1;
+}
+
+/* Sign Up Toggle Button - Teal to Blue */
+.user_unregistered-signup {
+  background: linear-gradient(135deg, #0d9488, #2563eb);
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+}
+.user_unregistered-signup::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #2563eb, #0d9488);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
 .user_unregistered-signup:hover {
-  color: #002d5c;
-  background-color: #ccc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(13, 148, 136, 0.4);
+}
+.user_unregistered-signup:hover::before {
+  opacity: 1;
 }
 
 /**
@@ -166,7 +209,6 @@ input::placeholder {
 }
 .user_options-forms .forms_title {
   margin-bottom: 45px;
-  font-size: 1.5rem;
   font-weight: 500;
   line-height: 1em;
   text-transform: uppercase;
@@ -217,19 +259,49 @@ input::placeholder {
   color: #334155;
 }
 .user_options-forms .forms_buttons-action {
-  background-color: #0057D8;
-  border-radius: 3px;
-  padding: 10px 35px;
+  background: linear-gradient(135deg, #002d5c, #712cf9);
+  border-radius: 14px;
+  padding: 14px 35px;
   font-size: 1rem;
   font-family: "Inter", sans-serif;
-  font-weight: 300;
+  font-weight: 600;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  transition: background-color 0.2s ease-in-out;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 45, 92, 0.3);
+}
+.user_options-forms .forms_buttons-action::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #712cf9, #002d5c);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 .user_options-forms .forms_buttons-action:hover {
-  background-color: rgb(0, 66.4583333333, 165);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 45, 92, 0.4);
+}
+.user_options-forms .forms_buttons-action:hover::before {
+  opacity: 1;
+}
+
+/* Good Color Combination for Sign Up */
+.user_options-forms .user_forms-signup .forms_buttons-action {
+  background: linear-gradient(135deg, #0d9488, #2563eb);
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+}
+.user_options-forms .user_forms-signup .forms_buttons-action::before {
+  background: linear-gradient(135deg, #2563eb, #0d9488);
+}
+.user_options-forms .user_forms-signup .forms_buttons-action:hover {
+  box-shadow: 0 8px 25px rgba(13, 148, 136, 0.4);
 }
 .user_options-forms .user_forms-signup,
 .user_options-forms .user_forms-login {
