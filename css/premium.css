@@ -735,6 +735,40 @@ h1, h2, h3, h4, h5, h6 {
     .section-heading { font-size: 28px; }
     .hero-subtitle { font-size: 16px; }
 }
+/* About Info Cards */
+.about-info-card {
+    border-radius: var(--br-section);
+    background: #ffffff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.about-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.about-info-card.danger::before { background: var(--bs-danger); }
+.about-info-card.info::before { background: var(--bs-info); }
+
+.about-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important;
+}
+
+.about-info-card:hover::before {
+    width: 100%;
+    opacity: 0.05;
+}
 
 /* Scroll to Top Button */
 .scroll-to-top {
