@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - IMA National Health Scheme</title>
+    <title>Login & Register - IMA National Health Scheme</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Secure login and registration portal for the IMA National Health Scheme. Access member benefits, track your claims, and manage your profile securely.">
+    <meta name="keywords" content="IMA Login, IMA Register, IMA NHS Admin, IMA Health Scheme Portal, Doctor Login">
+    <meta name="author" content="IMA National Health Scheme">
+    <meta name="robots" content="index, follow">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/premium.css">
@@ -165,6 +171,50 @@ if (window.matchMedia("(min-width: 769px)").matches) {
         });
     });
 }
+
+/**
+ * CAPTCHA Logic
+ */
+function generateCaptcha() {
+    const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let captcha = '';
+    for (let i = 0; i < 6; i++) {
+        captcha += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return captcha;
+}
+
+const captchaContainers = document.querySelectorAll('.captcha_container');
+
+captchaContainers.forEach(container => {
+    const captchaBox = container.querySelector('.captcha_box');
+    const refreshBtn = container.querySelector('.captcha_refresh');
+    const inputField = container.querySelector('.forms_field-input');
+    const form = container.closest('form');
+    
+    // Function to set new captcha
+    const setCaptcha = () => {
+        const newCaptcha = generateCaptcha();
+        captchaBox.textContent = newCaptcha;
+        captchaBox.dataset.captcha = newCaptcha;
+        inputField.value = '';
+    };
+
+    // Initial captcha
+    setCaptcha();
+
+    // Refresh on click
+    refreshBtn.addEventListener('click', setCaptcha);
+
+    // Form validation
+    form.addEventListener('submit', (e) => {
+        if (inputField.value !== captchaBox.dataset.captcha) {
+            e.preventDefault();
+            alert('Invalid CAPTCHA! Please try again.');
+            setCaptcha();
+        }
+    });
+});
 </script>
 </body>
 </html>

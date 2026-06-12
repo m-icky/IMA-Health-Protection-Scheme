@@ -40,7 +40,9 @@
                     <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../imanhs.html#whyus">Why Us</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-modern active cursor-hover" data-text="OPEN" href="../Bearers/index.html">Office Bearers</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../imanhs.html#downloads">Downloads</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="https://docs.google.com/viewer?url=https://leoninedigital.com/scheme" target="_blank">Bye Laws</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../assets/bye%20law%202%20PDf.pdf" target="_blank">Bye Laws</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../imanhs.html#news-and-events">News & Updates</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern cursor-hover" data-text="OPEN" href="../imanhs.html#contact">Contact Us</a></li>
                     <li class="nav-item ms-lg-2"><a class="btn btn-premium cursor-hover" data-text="LOGIN" href="../admin/index.html">Login</a></li>
                 </ul>
             </div>
@@ -263,11 +265,15 @@
             
             <div class="col-lg-4">
                 <h4 class="mb-4 fw-bold">Useful Links</h4>
-                <ul class="list-unstyled d-flex flex-column gap-3">
+                <ul class="list-unstyled footer-links-grid">
                     <li><a href="../imanhs.html#home" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Home</a></li>
                     <li><a href="../imanhs.html#about" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> About Us</a></li>
-                    <li><a href="../imanhs.html#news-and-events" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> News & Events</a></li>
+                    <li><a href="../imanhs.html#whyus" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Why Us</a></li>
+                    <li><a href="../Bearers/index.html" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Office Bearers</a></li>
                     <li><a href="../imanhs.html#downloads" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Downloads</a></li>
+                    <li><a href="../assets/bye%20law%202%20PDf.pdf" target="_blank" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Bye Laws</a></li>
+                    <li><a href="../imanhs.html#news-and-events" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> News & Updates</a></li>
+                    <li><a href="../imanhs.html#contact" class="text-white-50 text-decoration-none cursor-hover d-inline-flex align-items-center" data-text="OPEN"><i class="fa fa-chevron-right me-2 small"></i> Contact Us</a></li>
                 </ul>
             </div>
             
@@ -330,6 +336,20 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             header.classList.remove('scrolled');
         }
+    });
+
+    // Auto-close mobile navbar on link click
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const menuToggle = document.getElementById('mainNavbar');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (menuToggle.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(menuToggle, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+        });
     });
 });
 </script>
