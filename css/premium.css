@@ -806,3 +806,62 @@ h1, h2, h3, h4, h5, h6 {
     visibility: visible;
     transform: translateY(0);
 }
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#preloader svg {
+    width: 350px;
+    max-width: 80vw;
+}
+
+.loading-text {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0057D8; /* Using the primary blue color */
+    letter-spacing: 2px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loading-dots span {
+    animation: loadingDots 1.4s infinite both;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes loadingDots {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    20% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.2; transform: scale(0.8); }
+}
