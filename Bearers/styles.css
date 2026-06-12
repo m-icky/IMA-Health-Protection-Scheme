@@ -22,10 +22,37 @@ body {
 
 .profile-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     row-gap: 150px; /* Space for the top overlapping images */
     padding: 120px 20px 100px;
+}
+
+/* 3-4-3 Layout for Desktop */
+@media (min-width: 1200px) {
+    .profile-grid {
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 30px;
+    }
+    
+    .profile-card:nth-child(1),
+    .profile-card:nth-child(2),
+    .profile-card:nth-child(3) {
+        grid-column: span 4;
+    }
+    
+    .profile-card:nth-child(4),
+    .profile-card:nth-child(5),
+    .profile-card:nth-child(6),
+    .profile-card:nth-child(7) {
+        grid-column: span 3;
+    }
+    
+    .profile-card:nth-child(8),
+    .profile-card:nth-child(9),
+    .profile-card:nth-child(10) {
+        grid-column: span 4;
+    }
 }
 
 .profile-card {
@@ -41,7 +68,7 @@ body {
 }
 
 .profile-card:hover {
-    height: 420px; /* Expand to show all details */
+    height: 210px; /* Expand to show all details */
     box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
@@ -61,7 +88,7 @@ body {
 }
 
 .profile-card:hover .profile-img {
-    top: -140px; /* Move up on hover */
+    top: -120px; /* Move up on hover */
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
@@ -82,7 +109,7 @@ body {
 }
 
 .profile-card:hover .profile-name {
-    top: 120px; /* Move up together with the image */
+    top: 140px; /* Move up together with the image */
 }
 
 .profile-name h4 {
